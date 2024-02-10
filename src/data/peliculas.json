@@ -1,0 +1,107 @@
+[
+  {
+    "id" : 0,
+    "nombre" : "Avengers EndGame",
+    "autor" : "Marvel",
+    "clasificacion" : "Película",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/hjekhkvrffhfqlwojag6.jpg"
+  },
+  {
+    "id" : 1,
+    "nombre" : "The Matrix",
+    "autor" : "Joe Silver",
+    "clasificacion" : "Película",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/vwh1ljsusiycgcpftjjz.jpg"
+  },
+  {
+    "id" : 2,
+    "nombre" : "La Vida es Bella",
+    "autor" : "Elda Ferri",
+    "clasificacion" : "Película",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/uhkkf2nwhszfrryobbvh.jpg"
+  },
+  {
+    "id" : 3,
+    "nombre" : "El Padrino",
+    "autor" : "Albert S. Ruddy",
+    "clasificacion" : "Película\n\"clasificacion\" : Película \n",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/yagmz7rhncwwhvtfysju.webp"
+  },
+  {
+    "id" : 4,
+    "nombre" : "Oppenheimer",
+    "autor" : "Christopher Nolan",
+    "clasificacion" : "Película",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707560767/Peliculas/svcw3yx1b06rbebcqfkw.jpg"
+  },
+  {
+    "id" : 5,
+    "nombre" : "Hogwarts Legacy",
+    "autor" : "Marvel",
+    "clasificacion" : "Videojuego",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/bywgmxzc6nb7i5ikatdl.png"
+  },
+  {
+    "id" : 6,
+    "nombre" : "Palworld",
+    "autor" : "Pocketpair",
+    "clasificacion" : "Videojuego",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563260/BibliotecaMultimedia/xydd2v8wznls9z1vv0up.png"
+  },
+  {
+    "id" : 7,
+    "nombre" : "Age of Empire 2",
+    "autor" : "Microsoft Game Studio",
+    "clasificacion" : "Videojuego",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/iweijhk7jlrpvuhjkukp.png"
+  },
+  {
+    "id" : 8,
+    "nombre" : "Grand Theft Auto 5",
+    "autor" : "Rockstart",
+    "clasificacion" : "Videojuego",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/vkd6fx3enxtofdxclvfu.png"
+  },
+  {
+    "id" : 9,
+    "nombre" : "Cyberpunk 2077",
+    "autor" : "Bandai Namco",
+    "clasificacion" : "Videojuego",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/qi92lqxyo6c4gt9bgqgi.png"
+  },
+  {
+    "id" : 10,
+    "nombre" : "Un alma de ceniza y sangre",
+    "autor" : "Jenifer L. Armentrout",
+    "clasificacion" : "E-Book",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/gwnil0ttneo6hnsot4mr.jpg"
+  },
+  {
+    "id" : 11,
+    "nombre" : "Las hijas de la criada",
+    "autor" : "Sonsoles Ónega",
+    "clasificacion" : "E-Book",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/cspt1qj2wkduezwupby6.jpg"
+  },
+  {
+    "id" : 12,
+    "nombre" : "Los pilares de la tierra",
+    "autor" : "Ken Follett",
+    "clasificacion" : "E-Book",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/qmxycv5hijlhkpwfn2y7.jpg"
+  },
+  {
+    "id" : 13,
+    "nombre" : "Harry Potter y la piedra filosofal",
+    "autor" : "J.K. Rowling",
+    "clasificacion" : "E-Book",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/oqblmobd34qanm69fk4w.jpg"
+  },
+  {
+    "id" : 14,
+    "nombre" : "El Señor de los Anillos Las dos torres",
+    "autor" : "J.R.R. Tolkien",
+    "clasificacion" : "E-Book",
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/z0ulzl0jzmhe7l28xast.jpg"
+  }
+]
