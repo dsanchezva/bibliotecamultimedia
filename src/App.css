@@ -18,6 +18,23 @@
 .main {grid-area: main;}
 .footer { grid-area: footer; }
 
-img {
-  max-width: 100px;
+
+
+
+.article-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5vw;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+#img-card-container {
+  max-width: max-content;
+}
+#img-card {
+  max-width: 200px;
 }
