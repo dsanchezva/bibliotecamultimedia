@@ -1,85 +1,101 @@
-import { useEffect, useState } from 'react'
-import allArticle from '../data/peliculas.json'
-import ProductCard from '../components/ProductCard'
-import { Input, Select, Option } from "@material-tailwind/react";
-
+import { useEffect, useState } from "react";
+import allArticle from "../data/peliculas.json";
+import ProductCard from "../components/ProductCard";
+import _ from "lodash";
+import { Input, Button } from "@material-tailwind/react";
+import CreateForm from "../components/CreateForm";
 
 function Home() {
-  const [articleShow, setArticleShow] = useState([])
-  const [showEditForm, setShowEditForm] = useState(false)
+  const [articleShow, setArticleShow] = useState([]);
+  const [lastId, setLastId] = useState();
+  const [createFormShow, setCreateFormShow] = useState(false);
 
-  //Hooks para editar
-  const [articleEdit, setArticleEdit] = useState(null)
-  const[nombreEdit, setNombreEdit] = useState("")
-  const handleNombreEdit = (e) => setNombreEdit(e.target.value)
-  const[autorEdit, setAutorEdit] = useState("")
-  const handleAutorEdit = (e) => setAutorEdit(e.target.value)
-  const[clasificacionEdit, setClasificacionEdit] = useState("")
-  const handleClasificacionEdit = (e) => console.log(e)
-  const[imgUrlEdit, setImgUrlEdit] = useState("")
-  const handleImgUrlEdit = (e) => setImgUrlEdit(e.target.value)
-  
+  const handleShowCreateForm = () => {
+    if (createFormShow === true) {
+      setCreateFormShow(false);
+    } else {
+      setCreateFormShow(true);
+    }
+  };
 
-
-  const handleEdit = (data) => {
-    const articulo = articleShow.find((article) => article.id === data)
-    setArticleEdit(articulo)
-    setShowEditForm(true)
-  }
-
-  //Borra el elemento seleccionado
-  const handleDelete = (data) => {
-    //copio el array para no mutar el original
+  const handleCreate = (data) => {
     const cloneData = articleShow.slice(0)
-    //borro el elemento por su id del array
-    cloneData.splice(data, 1)
-    //asignamos el parametro de id que sea igual al indice del array
-    const newArray = cloneData.map((each, index) => {
-      each.id = index
-      return each
-    })
-    //visualizamos en pantalla el nuevo array con el elemetno eliminado
-   setArticleShow(newArray)
+    setCreateFormShow(false)
+    setLastId(lastId + 1 ) 
+    const newArticle = {
+      id: lastId,
+      nombre: data.nombre,
+      autor: data.autor,
+      clasificacion: data.clasificacion,
+      imgUrl: data.imgUrl,
+      fechaCreacion: data.fechaCreacion
+    }
 
+    cloneData.push(newArticle)
+    setArticleShow(cloneData)
 
-  }
+  };
+  const handleEdit = (data) => {
+    const cloneData = articleShow.slice(0);
+
+    const articleIndex = _.findIndex(cloneData, (it) => it.id === data.id);
+    if (articleIndex >= 0) {
+      cloneData[articleIndex] = data;
+      console.log(cloneData);
+      setArticleShow(cloneData);
+    }
+  };
+
+  const handleDelete = (data) => {
+    const cloneData = articleShow.slice(0);
+    const articleIndex = _.findIndex(cloneData, (it) => it.id === data);
+    console.log(articleIndex);
+    if (articleIndex >= 0) {
+      cloneData.splice(articleIndex, 1);
+      setArticleShow(cloneData);
+    }
+  };
+
   useEffect(() => {
-      setArticleShow(allArticle)
-  }, [])
+    setLastId(allArticle.length);
+  }, []);
 
-
-
-
+  useEffect(() => {
+    setArticleShow(
+      allArticle.map((it) => ({
+        id: it.id,
+        nombre: it.nombre,
+        autor: it.autor,
+        clasificacion: it.clasificacion,
+        imgUrl: it.imgUrl,
+        fechaCreacion: new Date(it.fechaCreacion),
+      }))
+    );
+  }, []);
 
   return (
     <>
-    
-    {showEditForm ? <div className='edit-form'>
-    <div className="w-72">
-      <Input label="Nombre" value={articleEdit.nombre} onChange={handleNombreEdit}/>
-      <br />
-      <Input label="Autor" value={articleEdit.autor} onChange={handleAutorEdit}/>
-    <br />
-    <Select label="Select Version" onSelect={handleClasificacionEdit}>
-        <Option>Pelicula</Option>
-        <Option>E-Book</Option>
-        <Option>Videojuego</Option>
-        </Select>
-    <br />
-      <Input label="Url Imagen" value={articleEdit.imgUrl} onChange={handleImgUrlEdit}/>
-
-    </div>
-    </div> : <></>}
-    
-    <div className='article-container'>  
-      {articleShow.map((eachArticle, index) => {
-        return <ProductCard key={index}data={eachArticle} handleEdit={handleEdit} handleDelete={handleDelete}/>
-      })}
-    </div>
-    
+      <Button onClick={handleShowCreateForm} color="pink">Añadir nuevo articulo</Button>
+      {createFormShow ? <CreateForm handleCreate={handleCreate} /> : <></>}
+      <hr />
+      <div className="w-72 flex gap-4">
+        <Input label="Buscar por nombre:" />
+        <input type="date"></input>
+      </div>
+      <div className="article-container">
+        {articleShow.map((eachArticle, index) => {
+          return (
+            <ProductCard
+              key={index}
+              data={eachArticle}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+            />
+          );
+        })}
+      </div>
     </>
-    
-  )
+  );
 }
 
-export default Home
+export default Home;

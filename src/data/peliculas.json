@@ -4,104 +4,119 @@
     "nombre" : "Avengers EndGame",
     "autor" : "Marvel",
     "clasificacion" : "Película",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/hjekhkvrffhfqlwojag6.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/hjekhkvrffhfqlwojag6.jpg",
+    "fechaCreacion" : "2019-04-26" 
   },
   {
     "id" : 1,
     "nombre" : "The Matrix",
     "autor" : "Joe Silver",
     "clasificacion" : "Película",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/vwh1ljsusiycgcpftjjz.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/vwh1ljsusiycgcpftjjz.jpg",
+    "fechaCreacion" : "1999-03-31" 
   },
   {
     "id" : 2,
     "nombre" : "La Vida es Bella",
     "autor" : "Elda Ferri",
     "clasificacion" : "Película",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/uhkkf2nwhszfrryobbvh.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/uhkkf2nwhszfrryobbvh.jpg",
+    "fechaCreacion" : "1999-02-26" 
   },
   {
     "id" : 3,
     "nombre" : "El Padrino",
     "autor" : "Albert S. Ruddy",
     "clasificacion" : "Película",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/yagmz7rhncwwhvtfysju.webp"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563131/BibliotecaMultimedia/yagmz7rhncwwhvtfysju.webp",
+    "fechaCreacion" : "1972-10-20" 
   },
   {
     "id" : 4,
     "nombre" : "Oppenheimer",
     "autor" : "Christopher Nolan",
     "clasificacion" : "Película",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707560767/Peliculas/svcw3yx1b06rbebcqfkw.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707560767/Peliculas/svcw3yx1b06rbebcqfkw.jpg",
+    "fechaCreacion" : "2023-06-21" 
   },
   {
     "id" : 5,
     "nombre" : "Hogwarts Legacy",
     "autor" : "Marvel",
     "clasificacion" : "Videojuego",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/bywgmxzc6nb7i5ikatdl.png"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/bywgmxzc6nb7i5ikatdl.png",
+    "fechaCreacion" : "2023-02-10" 
   },
   {
     "id" : 6,
     "nombre" : "Palworld",
     "autor" : "Pocketpair",
     "clasificacion" : "Videojuego",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563260/BibliotecaMultimedia/xydd2v8wznls9z1vv0up.png"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563260/BibliotecaMultimedia/xydd2v8wznls9z1vv0up.png",
+    "fechaCreacion" : "2024-01-18" 
   },
   {
     "id" : 7,
     "nombre" : "Age of Empire 2",
     "autor" : "Microsoft Game Studio",
     "clasificacion" : "Videojuego",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/iweijhk7jlrpvuhjkukp.png"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/iweijhk7jlrpvuhjkukp.png",
+    "fechaCreacion" : "1999-09-17" 
   },
   {
     "id" : 8,
     "nombre" : "Grand Theft Auto 5",
     "autor" : "Rockstart",
     "clasificacion" : "Videojuego",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/vkd6fx3enxtofdxclvfu.png"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/vkd6fx3enxtofdxclvfu.png",
+    "fechaCreacion" : "2013-09-17" 
   },
   {
     "id" : 9,
     "nombre" : "Cyberpunk 2077",
     "autor" : "Bandai Namco",
     "clasificacion" : "Videojuego",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/qi92lqxyo6c4gt9bgqgi.png"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707563259/BibliotecaMultimedia/qi92lqxyo6c4gt9bgqgi.png",
+    "fechaCreacion" : "2020-12-09" 
   },
   {
     "id" : 10,
     "nombre" : "Un alma de ceniza y sangre",
     "autor" : "Jenifer L. Armentrout",
     "clasificacion" : "E-Book",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/gwnil0ttneo6hnsot4mr.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/gwnil0ttneo6hnsot4mr.jpg",
+    "fechaCreacion" : "2023-11-14" 
   },
   {
     "id" : 11,
     "nombre" : "Las hijas de la criada",
     "autor" : "Sonsoles Ónega",
     "clasificacion" : "E-Book",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/cspt1qj2wkduezwupby6.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/cspt1qj2wkduezwupby6.jpg",
+    "fechaCreacion" : "2023-11-08" 
   },
   {
     "id" : 12,
     "nombre" : "Los pilares de la tierra",
     "autor" : "Ken Follett",
     "clasificacion" : "E-Book",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/qmxycv5hijlhkpwfn2y7.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/qmxycv5hijlhkpwfn2y7.jpg",
+    "fechaCreacion" : "1989-05-10" 
   },
   {
     "id" : 13,
     "nombre" : "Harry Potter y la piedra filosofal",
     "autor" : "J.K. Rowling",
     "clasificacion" : "E-Book",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/oqblmobd34qanm69fk4w.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/oqblmobd34qanm69fk4w.jpg",
+    "fechaCreacion" : "1997-06-26" 
   },
   {
     "id" : 14,
     "nombre" : "El Señor de los Anillos Las dos torres",
     "autor" : "J.R.R. Tolkien",
     "clasificacion" : "E-Book",
-    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/z0ulzl0jzmhe7l28xast.jpg"
+    "imgUrl" : "https://res.cloudinary.com/dqdhb1efh/image/upload/v1707562966/BibliotecaMultimedia/z0ulzl0jzmhe7l28xast.jpg",
+    "fechaCreacion" : "1954-11-11" 
   }
 ]
