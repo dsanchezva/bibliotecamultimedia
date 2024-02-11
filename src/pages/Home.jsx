@@ -31,7 +31,7 @@ function Home() {
       fechaCreacion: data.fechaCreacion
     }
 
-    cloneData.push(newArticle)
+    cloneData.unshift(newArticle)
     setArticleShow(cloneData)
 
   };

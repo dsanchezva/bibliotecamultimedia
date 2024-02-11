@@ -29,7 +29,7 @@ function ProductCard(props) {
   };
 
   return (
-    <Card className="w-96 max-w-96">
+    <Card className="w-96 max-w-96 flex flex-col justify-items-center items-center">
       <CardHeader floated={false} className="h-80" id="img-card-container">
         <img
           src={imgUrl}
@@ -47,7 +47,7 @@ function ProductCard(props) {
         <Typography>Creado: {fechaCreacion.toDateString()}</Typography>
       </CardBody>
 
-      <CardFooter className="flex flex-column justify-center gap-7 pt-2">
+      <CardFooter className="flex flex-column items-center gap-7 pt-2">
         <Button onClick={handleEditButton} color="pink" className="mr-5">
           Editar
         </Button>
