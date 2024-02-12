@@ -4,11 +4,12 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import { Button } from "@material-tailwind/react";
 
 function DatePick(props) {
   const { setArticleShow, articleList } = props.data;
@@ -36,6 +37,13 @@ function DatePick(props) {
 
   return (
     <div className="flex flex-row justify-items-center items-center w-fit">
+      <div className="ml-8">
+      <IconButton aria-label="delete"  className="deleteDate-btn"
+          onClick={handleDeleteDateBtn}>
+        <DeleteIcon />
+      </IconButton>
+      </div>
+      
       <div className="p-24">
         <Popover placement="bottom">
           <PopoverHandler>
@@ -88,15 +96,7 @@ function DatePick(props) {
           </PopoverContent>
         </Popover>
       </div>
-      <div className="ml-8">
-        <Button
-          className="deleteDate-btn"
-          onClick={handleDeleteDateBtn}
-          color="red"
-        >
-          Borrar Fecha
-        </Button>
-      </div>
+      
     </div>
   );
 }

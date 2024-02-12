@@ -46,7 +46,7 @@ function ProductCard(props) {
               id="img-card"
             />
           </CardHeader>
-          <CardBody className="text-center">
+          <CardBody className="text-center p-4">
             <Typography
               variant="h5"
               color="blue-gray"
@@ -55,11 +55,11 @@ function ProductCard(props) {
               {nombre}
             </Typography>
             <Typography>{autor}</Typography>
-            <Typography>{clasificacion}</Typography>
+            <Typography color="pink">{clasificacion}</Typography>
             <Typography>Creado: {fechaCreacion.toDateString()}</Typography>
           </CardBody>
 
-          <CardFooter className="flex flex-column items-center gap-7 pt-2">
+          <CardFooter className="flex flex-column items-center gap-7">
             <Button onClick={handleEditButton} color="pink" className="mr-5">
               Editar
             </Button>

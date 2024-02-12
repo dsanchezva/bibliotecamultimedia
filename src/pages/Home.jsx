@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import allArticle from "../data/peliculas.json";
 import ProductCard from "../components/ArticleCard";
 import _ from "lodash";
-import { Button } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import CreateForm from "../components/CreateForm";
 import DatePick from "../components/DatePick";
 import Search from "../components/Search";
@@ -99,13 +99,14 @@ function Home() {
         </Button>
         {createFormShow ? <CreateForm handleCreate={handleCreate} /> : <></>}
       </div>
-      <div className="w-72 flex flex-col items-center justify-items-center gap-4">
+      <div className="search-container flex flex-col items-center justify-items-center gap-4">
         <Search
           label="Buscar por nombre:"
           data={{ setArticleShow, articleList }}
         />
         <DatePick data={{ setArticleShow, articleList }} />
       </div>
+      {articleShow[0] ? 
       <div className="article-container">
         {articleShow.map((eachArticle, index) => {
           return (
@@ -117,7 +118,19 @@ function Home() {
             />
           );
         })}
-      </div>
+      </div> : <Typography color="black" id="article-notfound">No se ha encontrado ningun articulo!</Typography>}
+      {/* <div className="article-container">
+        {articleShow.map((eachArticle, index) => {
+          return (
+            <ProductCard
+              key={index}
+              data={eachArticle}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+            />
+          );
+        })}
+      </div> */}
     </>
   );
 }

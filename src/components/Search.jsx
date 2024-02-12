@@ -18,7 +18,7 @@ function Search(props) {
 }
 
   return (
-    <Input className="search-bar" label="Buscar por nombre:" onChange={handleSearchByName} value={nameSearch}/>
+    <Input className="search-bar" label="Buscar por nombre:" onChange={handleSearchByName} value={nameSearch} color="black"/>
   )
 }
 

@@ -18,6 +18,10 @@
 .main {
   grid-area: main;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
 }
 .footer { 
   margin-top: 50px;
@@ -41,13 +45,16 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
- 
+ margin-top: 10px;
 
 }
 #article-card {
 height: 500px;
-width: 260px;
-
+width: 300px;
+overflow: hidden;
+background-color: #d2d4d6;
+background: rgba(210,212,210,.3);
+/* background: linear-gradient(0deg, rgba(210,212,210,.3) 0%, rgba(17,0,32,.5) 50%); */
 }
 
 
@@ -61,13 +68,21 @@ width: 260px;
 }
 
 .edit-form {
-  margin: 5px;
+  margin: 10px;
+}
+.search-container {
+  margin: 10px;
+  max-width: 95vw;
 }
 
 .search-bar {
-  margin: 5px;
+  margin: 10px;
 }
 
 .deleteDate-btn {
   margin: 5px;
+}
+
+#article-notfound {
+  margin-top: 200px;
 }
