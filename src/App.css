@@ -20,7 +20,7 @@
   margin-top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  
  
 }
 .footer { 
@@ -75,9 +75,7 @@ background: rgba(210,212,210,.3);
   max-width: 95vw;
 }
 
-.search-bar {
-  margin: 10px;
-}
+
 
 .deleteDate-btn {
   margin: 5px;
