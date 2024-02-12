@@ -31,9 +31,10 @@ function CreateForm(props) {
 
     useEffect(() => {
         setFechaCreacion(new Date())
+        setImgUrl("https://res.cloudinary.com/dqdhb1efh/image/upload/v1704718316/no-fotos_mihqdq.png")
     }, [])
     useEffect(() => {
-        if (nombre && autor && clasificacion && imgUrl) {
+        if (nombre && autor && clasificacion) {
             setDisabledBtn(false)
         } else {
             setDisabledBtn(true)

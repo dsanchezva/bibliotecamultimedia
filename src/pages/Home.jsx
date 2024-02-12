@@ -4,12 +4,16 @@ import ProductCard from "../components/ProductCard";
 import _ from "lodash";
 import { Input, Button } from "@material-tailwind/react";
 import CreateForm from "../components/CreateForm";
+import DatePick from "../components/DatePick";
+import Search from "../components/Search";
 
 function Home() {
   const [articleShow, setArticleShow] = useState([]);
   const [lastId, setLastId] = useState();
   const [createFormShow, setCreateFormShow] = useState(false);
+  const [articleList, setArticleList] = useState([])
 
+  
   const handleShowCreateForm = () => {
     if (createFormShow === true) {
       setCreateFormShow(false);
@@ -19,7 +23,7 @@ function Home() {
   };
 
   const handleCreate = (data) => {
-    const cloneData = articleShow.slice(0)
+    const cloneData = articleList.slice(0)
     setCreateFormShow(false)
     setLastId(lastId + 1 ) 
     const newArticle = {
@@ -32,27 +36,30 @@ function Home() {
     }
 
     cloneData.unshift(newArticle)
+    setArticleList(cloneData)
     setArticleShow(cloneData)
 
   };
   const handleEdit = (data) => {
-    const cloneData = articleShow.slice(0);
+    const cloneData = articleList.slice(0);
 
     const articleIndex = _.findIndex(cloneData, (it) => it.id === data.id);
     if (articleIndex >= 0) {
       cloneData[articleIndex] = data;
       console.log(cloneData);
       setArticleShow(cloneData);
+      setArticleList(cloneData)
     }
   };
 
   const handleDelete = (data) => {
-    const cloneData = articleShow.slice(0);
+    const cloneData = articleList.slice(0);
     const articleIndex = _.findIndex(cloneData, (it) => it.id === data);
-    console.log(articleIndex);
+    
     if (articleIndex >= 0) {
       cloneData.splice(articleIndex, 1);
       setArticleShow(cloneData);
+      setArticleList(cloneData);
     }
   };
 
@@ -71,16 +78,27 @@ function Home() {
         fechaCreacion: new Date(it.fechaCreacion),
       }))
     );
+    setArticleList( allArticle.map((it) => ({
+      id: it.id,
+      nombre: it.nombre,
+      autor: it.autor,
+      clasificacion: it.clasificacion,
+      imgUrl: it.imgUrl,
+      fechaCreacion: new Date(it.fechaCreacion),
+    })))
   }, []);
 
   return (
     <>
-      <Button onClick={handleShowCreateForm} color="pink">Añadir nuevo articulo</Button>
+    <div>
+      <Button onClick={handleShowCreateForm} color={createFormShow ? "red" : "pink"}>{createFormShow ? "Cancelar" : "Añadir nuevo articulo"}</Button>
       {createFormShow ? <CreateForm handleCreate={handleCreate} /> : <></>}
-      <hr />
-      <div className="w-72 flex gap-4">
-        <Input label="Buscar por nombre:" />
-        <input type="date"></input>
+
+
+    </div>
+      <div className="w-72 flex flex-col items-center justify-items-center gap-4">
+        <Search label="Buscar por nombre:" data={{setArticleShow, articleList}}/>
+        <DatePick data={{setArticleShow, articleList}}/>
       </div>
       <div className="article-container">
         {articleShow.map((eachArticle, index) => {

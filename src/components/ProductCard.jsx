@@ -28,6 +28,8 @@ function ProductCard(props) {
     setShowEditForm(false);
   };
 
+  
+
   return (
     <Card className="w-96 max-w-96 flex flex-col justify-items-center items-center">
       <CardHeader floated={false} className="h-80" id="img-card-container">
