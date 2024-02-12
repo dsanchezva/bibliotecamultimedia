@@ -1,4 +1,4 @@
-import { Input, Button } from "@material-tailwind/react";
+import { Input} from "@material-tailwind/react";
 import { useState } from "react";
 
 function Search(props) {
@@ -18,7 +18,7 @@ function Search(props) {
 }
 
   return (
-    <Input label="Buscar por nombre:" onChange={handleSearchByName} value={nameSearch}/>
+    <Input className="search-bar" label="Buscar por nombre:" onChange={handleSearchByName} value={nameSearch}/>
   )
 }
 

@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
-    <div>Develop by: David Sanchez</div>
-  )
+    <div className="footer">
+      <h4>Develop by: David Sanchez</h4>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

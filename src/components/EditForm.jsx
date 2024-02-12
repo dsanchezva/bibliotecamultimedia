@@ -2,8 +2,11 @@ import { Input, Select, Option, Button } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 
 function EditForm(props) {
-  const { id, nombre, autor, clasificacion, imgUrl,fechaCreacion } = props.data;
-  
+  const { id, nombre, autor, clasificacion, imgUrl, fechaCreacion } =
+    props.data;
+
+  const [disabledBtn, setDisabledBtn] = useState(true);
+
   const [nombreEdit, setNombreEdit] = useState("");
   const handleNombreEdit = (e) => setNombreEdit(e.target.value);
   const [autorEdit, setAutorEdit] = useState("");
@@ -12,29 +15,33 @@ function EditForm(props) {
   const handleClasificacionEdit = (e) => setClasificacionEdit(e);
   const [imgUrlEdit, setImgUrlEdit] = useState("");
   const handleImgUrlEdit = (e) => setImgUrlEdit(e.target.value);
-  
-  
-  
-    useEffect(() =>{
-    setNombreEdit(nombre)
-    setAutorEdit(autor)
-    setClasificacionEdit(clasificacion)
-    setImgUrlEdit(imgUrl)
-  }, [])
 
-const handleEditBtn = () => {
-    const data = {
-       id,
-        nombre: nombreEdit,
-        autor: autorEdit,
-        clasificacion: clasificacionEdit,
-        imgUrl: imgUrlEdit,
-        fechaCreacion
+  useEffect(() => {
+    setNombreEdit(nombre);
+    setAutorEdit(autor);
+    setClasificacionEdit(clasificacion);
+    setImgUrlEdit(imgUrl);
+  }, []);
+
+  useEffect(() => {
+    if (nombreEdit && autorEdit && clasificacionEdit && imgUrlEdit) {
+      setDisabledBtn(false);
+    } else {
+      setDisabledBtn(true);
     }
-    props.handleEdit(data)
+  }, [nombreEdit, autorEdit, clasificacionEdit, imgUrlEdit]);
 
-}
-
+  const handleEditBtn = () => {
+    const data = {
+      id,
+      nombre: nombreEdit,
+      autor: autorEdit,
+      clasificacion: clasificacionEdit,
+      imgUrl: imgUrlEdit,
+      fechaCreacion,
+    };
+    props.handleEdit(data);
+  };
 
   return (
     <div className="edit-form">
@@ -43,15 +50,25 @@ const handleEditBtn = () => {
         <br />
         <Input label="Autor" value={autorEdit} onChange={handleAutorEdit} />
         <br />
-        <Select label="Select Version" value={clasificacionEdit} onChange={handleClasificacionEdit} >
+        <Select
+          label="Select Version"
+          value={clasificacionEdit}
+          onChange={handleClasificacionEdit}
+        >
           <Option value="Película">Pelicula</Option>
           <Option value="E-Book">E-Book</Option>
           <Option value="Videojuego">Videojuego</Option>
         </Select>
         <br />
-        <Input label="Url Imagen" value={imgUrlEdit} onChange={handleImgUrlEdit} />
+        <Input
+          label="Url Imagen"
+          value={imgUrlEdit}
+          onChange={handleImgUrlEdit}
+        />
         <br />
-        <Button onClick={handleEditBtn}>Guardar</Button>
+        <Button onClick={handleEditBtn} disabled={disabledBtn}>
+          Guardar
+        </Button>
       </div>
     </div>
   );
