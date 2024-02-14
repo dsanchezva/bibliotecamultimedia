@@ -9,10 +9,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function DatePick(props) {
-  const { setArticleShow, articleList } = props.data;
+  const { setArticleShow, articleList, setDeleteSearch, deleteSearch } = props.data;
   const [date, setDate] = useState();
 
   const handleSetList = () => {};
@@ -34,6 +34,12 @@ function DatePick(props) {
     setDate(null);
     setArticleShow(articleList);
   };
+
+  useEffect(() => {
+    setDeleteSearch(false)
+    setDate(null);
+  },[deleteSearch]);
+
 
   return (
     <div className="flex flex-row justify-items-center items-center w-fit">

@@ -12,6 +12,8 @@ function Home() {
   const [lastId, setLastId] = useState();
   const [createFormShow, setCreateFormShow] = useState(false);
   const [articleList, setArticleList] = useState([]);
+  const [deleteSearch, setDeleteSearch] = useState(false)
+
 
   const handleShowCreateForm = () => {
     if (createFormShow === true) {
@@ -37,6 +39,7 @@ function Home() {
     cloneData.unshift(newArticle);
     setArticleList(cloneData);
     setArticleShow(cloneData);
+    setDeleteSearch(true)
   };
   const handleEdit = (data) => {
     const cloneData = articleList.slice(0);
@@ -46,6 +49,7 @@ function Home() {
       cloneData[articleIndex] = data;
       setArticleShow(cloneData);
       setArticleList(cloneData);
+      setDeleteSearch(true)
     }
   };
 
@@ -57,6 +61,7 @@ function Home() {
       cloneData.splice(articleIndex, 1);
       setArticleShow(cloneData);
       setArticleList(cloneData);
+      setDeleteSearch(true)
     }
   };
 
@@ -91,7 +96,7 @@ function Home() {
     <>
       <div>
         <Button
-          className=""
+          
           onClick={handleShowCreateForm}
           color={createFormShow ? "red" : "pink"}
         >
@@ -99,12 +104,12 @@ function Home() {
         </Button>
         {createFormShow ? <CreateForm handleCreate={handleCreate} /> : <></>}
       </div>
-      <div className="search-container flex flex-col items-center justify-items-center gap-4">
+      <div className="search-container flex flex-row items-center justify-items-center gap-4 w-1/5">
         <Search
-          label="Buscar por nombre:"
-          data={{ setArticleShow, articleList }}
+          label="Buscar por nombre"
+          data={{ setArticleShow, articleList,  setDeleteSearch, deleteSearch }}
         />
-        <DatePick data={{ setArticleShow, articleList }} />
+        <DatePick data={{ setArticleShow, articleList, setDeleteSearch, deleteSearch }} />
       </div>
       {articleShow[0] ? 
       <div className="article-container">
@@ -119,18 +124,6 @@ function Home() {
           );
         })}
       </div> : <Typography color="black" id="article-notfound">No se ha encontrado ningun articulo!</Typography>}
-      {/* <div className="article-container">
-        {articleShow.map((eachArticle, index) => {
-          return (
-            <ProductCard
-              key={index}
-              data={eachArticle}
-              handleEdit={handleEdit}
-              handleDelete={handleDelete}
-            />
-          );
-        })}
-      </div> */}
     </>
   );
 }

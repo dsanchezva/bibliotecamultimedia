@@ -8,11 +8,14 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import EditForm from "./EditForm";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 
 function ProductCard(props) {
   const { id, nombre, autor, clasificacion, imgUrl, fechaCreacion } =
     props.data;
   const [showEditForm, setShowEditForm] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleEditButton = (e) => {
     e.preventDefault();
@@ -21,6 +24,7 @@ function ProductCard(props) {
 
   const handleDeleteButton = (e) => {
     e.preventDefault();
+    setOpen(false);
     props.handleDelete(id);
   };
 
@@ -28,6 +32,22 @@ function ProductCard(props) {
     props.handleEdit(data);
     setShowEditForm(false);
   };
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
 
   return (
     <Card
@@ -63,9 +83,25 @@ function ProductCard(props) {
             <Button onClick={handleEditButton} color="pink" className="mr-5">
               Editar
             </Button>
-            <Button onClick={handleDeleteButton} color="red">
+            <Button onClick={handleOpen} color="red">
               Borrar
             </Button>
+            <Modal
+              keepMounted
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="keep-mounted-modal-title"
+              aria-describedby="keep-mounted-modal-description"
+            >
+              <Box sx={style}>
+                <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }} color="black">
+                  ¿Estas seguro que quieres borrar este articulo?
+                </Typography>
+                <Button onClick={handleDeleteButton} color="red">
+              Borrar
+            </Button>
+              </Box>
+            </Modal>
           </CardFooter>
         </>
       )}
