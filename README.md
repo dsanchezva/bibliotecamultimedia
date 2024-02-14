@@ -1,7 +1,3 @@
-## Biblioteca Multimedia sin Base de Datos
-
-
-
 ## Descripción
 
 Nuestra biblioteca multimedia es una aplicación web desarrollada con JavaScript y React. Utiliza estilos de Tailwind CSS y Material-UI para una experiencia de usuario atractiva y moderna. La aplicación está diseñada para almacenar, gestionar y explorar artículos multimedia en tres categorías distintas. Los datos se almacenan localmente en formato JSON para garantizar la simplicidad y la portabilidad.
